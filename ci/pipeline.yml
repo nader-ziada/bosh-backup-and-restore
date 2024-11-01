@@ -1130,6 +1130,8 @@ jobs:
         <<: *rmt_params
       input_mapping:
         release-update-config: rmt-release-file-update-config
+        release-created: rmt-release-id
+        release-files: rmt-release-config
     - task: update-release-ga-status
       attempts: 5
       image: bosh-ecosystem-registry-image
@@ -1139,6 +1141,7 @@ jobs:
         <<: *rmt_params
       input_mapping:
         release-update-config: rmt-release-update-config
+        release-created: rmt-release-id
     - put: gchat-notification
       inputs: []
       params:
