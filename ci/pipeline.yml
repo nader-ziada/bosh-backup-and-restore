@@ -1121,6 +1121,9 @@ jobs:
       file: bosh-ecosystem-concourse/tasks/rmt/make-config-updates-for-ga.yml
       params:
         RMT_CONTACT_EMAIL: *RMT_RELEASE_CONTACT
+        RMT_NO_ENCRYPTION_CHANGE: "Y"
+        RMT_OCT_REQUEST_ID: "3931" # from https://docs.google.com/spreadsheets/d/1xLPEyngkFvDnAA3RwMw61V3zjNF2YKxTiF_VcRweY2g/
+        RNT_THIRD_PARTY_CLASSIFICATION: "N"
     - task: update-file-ga-status
       attempts: 5
       image: bosh-ecosystem-registry-image
